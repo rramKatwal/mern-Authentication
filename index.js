@@ -24,8 +24,12 @@ app.use("/users", userRoutes);
 
 const port = process.env.PORT || 8080;
 
-app.use(express.static(path.resolve(__dirname, "client", "dist")));
+app.get("/", (req, res) => {
+  res.send("Hi there!! Welcome to my mer authentication.");
+});
+
 app.get("*", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "client", "dist")));
   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 });
 
