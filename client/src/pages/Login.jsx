@@ -19,13 +19,10 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        `${window.location.origin}/auth/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const { data } = await axios.post(`http://localhost:6517/auth/login`, {
+        email,
+        password,
+      });
 
       if (data?.success) {
         toast.success(data?.message);

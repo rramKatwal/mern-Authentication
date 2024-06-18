@@ -15,7 +15,7 @@ export const Dashboard = () => {
   const getUsers = async () => {
     try {
       const { data } = await axios.get(
-        `${window.location.origin}/users/all-users`,
+        `http://localhost:6517/users/all-users`,
         {
           headers: {
             Authorization: token,
@@ -47,7 +47,7 @@ export const Dashboard = () => {
       }
 
       const res = await axios.delete(
-        `${window.location.origin}/users/delete/${id}`,
+        `http://localhost:6517/users/delete/${id}`,
         {
           headers: {
             Authorization: token,
@@ -92,7 +92,7 @@ export const Dashboard = () => {
                       <td>{user.role} </td>
                       <td>
                         <img
-                          src={`${window.location.origin}/images/${user.profileImage}`}
+                          src={`http://localhost:6517/images/${user.profileImage}`}
                           alt="profile"
                           height="48px"
                           style={{ borderRadius: "50%" }}

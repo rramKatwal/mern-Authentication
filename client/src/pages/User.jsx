@@ -20,7 +20,7 @@ export const UserProfile = () => {
       }
 
       const res = await axios.delete(
-        `${window.location.origin}/users/delete/${user.id}`,
+        `http://localhost:6517/users/delete/${user.id}`,
         {
           headers: {
             Authorization: token,
@@ -44,10 +44,11 @@ export const UserProfile = () => {
           <div className="row">
             <div className="col-md-5 text-center verticalline">
               <img
-                src={`${window.location.origin}/images/${user.img}`}
+                src={`http://localhost:6517/images/${user.img}`}
                 alt="profile"
                 height="288px"
                 style={{ borderRadius: "50%" }}
+                className="img img-responsive"
               />
               <br />
               <h3 className="mt-2"> Email : {user.email}</h3>

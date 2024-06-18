@@ -36,7 +36,7 @@ export const Register = () => {
       formdata.append("cPassword", cPassword);
       formdata.append("profileImage", image);
       const { data } = await axios.post(
-        `${window.location.origin}/auth/register`,
+        `http://localhost:6517/auth/register`,
         formdata
       );
       if (data?.success) {

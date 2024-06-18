@@ -21,7 +21,7 @@ export const AdminUpdateProfile = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `${window.location.origin}/users/update/${user.id}`,
+        `http://localhost:6517/users/update/${user.id}`,
         { name, address },
         { headers: { Authorization: token } }
       );
@@ -57,7 +57,7 @@ export const AdminUpdateProfile = () => {
             <div className="img-preview">
               {image && (
                 <img
-                  src={`${window.location.origin}/images/${image}`}
+                  src={`http://localhost:6517/images/${image}`}
                   alt="profile"
                   height="288px"
                   style={{ borderRadius: "50%" }}

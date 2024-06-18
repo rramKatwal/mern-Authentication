@@ -21,7 +21,7 @@ export const ResetPassword = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `${window.location.origin}/auth/reset-password`,
+        `http://localhost:6517/auth/reset-password`,
         {
           otp,
           password,

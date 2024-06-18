@@ -17,12 +17,9 @@ export const Sendmail = () => {
   const sendOtp = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        `${window.location.origin}/auth/email`,
-        {
-          email,
-        }
-      );
+      const { data } = await axios.post(`http://localhost:6517/auth/email`, {
+        email,
+      });
       if (data?.success) {
         toast.success(data?.message, {
           onClose: () => navigate("/reset-password"),

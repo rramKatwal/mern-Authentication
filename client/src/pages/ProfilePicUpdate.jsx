@@ -17,7 +17,7 @@ export const ProfilePicUpdate = () => {
 
   useEffect(() => {
     if (user && user.img) {
-      setPreview(`${window.location.origin}/images/${user.img}`);
+      setPreview(`http://localhost:6517/images/${user.img}`);
     }
   }, [user]);
 
@@ -28,7 +28,7 @@ export const ProfilePicUpdate = () => {
       formData.append("profileImage", image);
 
       const { data } = await axios.put(
-        `${window.location.origin}/users/update/image/${user.id}`,
+        `http://localhost:6517/users/update/image/${user.id}`,
         formData,
         {
           headers: {
