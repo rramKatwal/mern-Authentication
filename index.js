@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 // Handle all other routes by serving the React app
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 });
 
